@@ -1,38 +1,37 @@
 <script setup lang="ts">
-import { BOARD_FILES, BOARD_RANKS, BOTTOM_RANK, LEFT_FILE } from '@/static'
-import type { File, Rank } from '@/types'
+import { BOTTOM_RANK, LEFT_FILE } from '@/static'
+import { useBoardStore } from '@/stores/board'
+import type { Square } from '@/types'
 import { computed } from 'vue'
-
+const boardStore = useBoardStore()
 const props = defineProps<{
-  file: File[number]
-  rank: Rank[number]
+  square: Square
 }>()
+const isSquareHighlighted = computed(() =>
+  boardStore.highlightedSquares.some(
+    (highlightedSquare) => props.square.index === highlightedSquare.index
+  )
+)
 const emit = defineEmits<{
-  (event: 'square-clicked', file: File[number], rank: Rank[number]): void
+  (event: 'square-clicked', square: Square): void
 }>()
-const darkSquare = computed(() => {
-  const rankIndex = BOARD_RANKS.indexOf(props.rank)
-  const fileIndex = BOARD_FILES.indexOf(props.file)
-  console.log(rankIndex, rankIndex % 2 === 0)
-  console.log(fileIndex)
-  return rankIndex % 2 === 0 ? fileIndex % 2 === 1 : fileIndex % 2 === 0
-})
 </script>
 
 <template>
   <div
-    @click="emit('square-clicked', file, rank)"
+    @click="emit('square-clicked', square)"
     class="game-square"
     :class="{
-      'dark-square': darkSquare,
-      'light-square': !darkSquare
+      'dark-square': square.isDarkSquare,
+      'light-square': !square.isDarkSquare,
+      highlighted: isSquareHighlighted
     }"
   >
-    <div class="board-notation bottom-rank" v-if="rank === BOTTOM_RANK">
-      {{ file }}
+    <div class="board-notation bottom-rank" v-if="square.rank === BOTTOM_RANK">
+      {{ square.file }}
     </div>
-    <div class="board-notation left-file" v-if="file === LEFT_FILE">
-      {{ rank }}
+    <div class="board-notation left-file" v-if="square.file === LEFT_FILE">
+      {{ square.rank }}
     </div>
   </div>
 </template>
@@ -70,12 +69,19 @@ const darkSquare = computed(() => {
   background-color: #ccc;
 }
 
+.game-square.light-square.highlighted {
+  background-color: blue;
+}
+
 .game-square.dark-square {
   background-color: #7373b3;
 }
 
 .game-square.dark-square:hover {
   background-color: #50507d;
+}
+.game-square.dark-square.highlighted {
+  background-color: purple;
 }
 
 .light-square .board-notation {
