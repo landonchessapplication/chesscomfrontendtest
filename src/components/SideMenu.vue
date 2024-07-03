@@ -61,6 +61,7 @@ const boardStore = useBoardStore()
   #side-menu {
     width: 100%;
     min-height: 200px;
+    flex-grow: 1;
   }
 }
 </style>
