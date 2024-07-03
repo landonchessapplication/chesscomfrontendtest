@@ -60,13 +60,18 @@ const emit = defineEmits<{
   left: 10%;
   top: 10%;
 }
+/* Only add hover events if device has hover */
+@media (hover: hover) {
+  .game-square.light-square:hover {
+    background-color: var(--light-square-hover);
+  }
+  .game-square.dark-square:hover {
+    background-color: var(--dark-square-hover);
+  }
+}
 
 .game-square.light-square {
   background-color: var(--light-square);
-}
-
-.game-square.light-square:hover {
-  background-color: var(--light-square-hover);
 }
 
 .game-square.light-square.highlighted {
@@ -77,9 +82,6 @@ const emit = defineEmits<{
   background-color: var(--dark-square);
 }
 
-.game-square.dark-square:hover {
-  background-color: var(--dark-square-hover);
-}
 .game-square.dark-square.highlighted {
   background-color: var(--dark-square-highlighted);
 }
