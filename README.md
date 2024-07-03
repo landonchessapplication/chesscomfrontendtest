@@ -1,8 +1,24 @@
-# Landon Marshall's Chess.com coding challenge submission
+# Landon Marshall's Chess.com Coding Challenge Submission
+Thank you for reviewing my submission!
+
+I believe I have satisfied all of the requirements; I have also added a theme switcher on the sidemenu
+
+I created the Vue.js application using the command `npm create vue@latest`
+
+I am hosting it on GitHub pages via Github Actions.
 
 ## Live Demo
 
 https://landonchessapplication.github.io/chesscomfrontendtest/
+
+## Running this project locally 
+
+- `npm i`
+
+- `npm run dev`
+
+- Go to `localhost:5173` to see the application in your browser
+
 
 # Original README
 
