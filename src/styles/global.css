@@ -18,13 +18,21 @@ body {
   -webkit-tap-highlight-color: transparent;
 }
 
+select {
+  border-radius: 8px;
+  background-color: var(--light-square);
+  color: #333;
+  padding: 6px;
+  cursor: pointer;
+}
+
 button {
   border-radius: 8px;
   border: none;
   padding: 6px;
   cursor: pointer;
   background-color: var(--light-square);
-  color: var(--dark-square);
+  color: #333;
 }
 button:hover {
   background-color: var(--light-square-hover);
@@ -41,6 +49,6 @@ button:hover {
   #app {
     flex-direction: column;
     gap: unset;
-    min-height: 400px; /* anything small than this is too squished to use, we will just add scroll */
+    min-height: 400px; /* anything smaller than this is too squished to use, we will just add scroll */
   }
 }

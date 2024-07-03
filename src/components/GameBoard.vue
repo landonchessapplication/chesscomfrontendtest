@@ -10,7 +10,6 @@ const squares = computed(() => {
   return generateSquares()
 })
 const boardContainerMax = ref('0px')
-const boardContainerWidth = ref('0px')
 const columns = computed(() => {
   return `repeat(${BOARD_FILES.length}, 1fr)`
 })
@@ -53,12 +52,13 @@ onUnmounted(() => {
 
 <style scoped>
 .board-container {
+  --padding: 16px;
   flex-grow: 1;
   margin: auto;
-  padding: 0 20px;
+  padding: 0 var(--padding);
 }
 .board {
-  margin: 0 20px;
+  margin: 0 16px;
   display: grid;
   margin: auto;
   aspect-ratio: 1;
@@ -74,14 +74,14 @@ onUnmounted(() => {
 }
 @media (max-width: 768px) {
   .board-container {
-    padding: 20px;
+    padding: var(--padding);
     margin: unset;
     min-height: 50%;
     flex-grow: 0;
   }
   .board {
     flex-grow: 1;
-    max-height: calc(v-bind('boardContainerMax') - 40px);
+    max-height: calc(v-bind('boardContainerMax') - (var(--padding) * 2));
   }
 }
 </style>

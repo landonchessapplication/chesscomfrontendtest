@@ -23,7 +23,8 @@ const boardStore = useBoardStore()
           {{ `${index + 1}. ${highlightedSquare.file}${highlightedSquare.rank}` }}
         </div>
       </template>
-
+    </div>
+    <div>
       <ThemeSwitch />
     </div>
   </div>
@@ -31,6 +32,7 @@ const boardStore = useBoardStore()
 
 <style scoped>
 #side-menu {
+  --padding: 16px;
   width: 300px;
   color: #e3e3e3;
   background-color: #222;
@@ -40,26 +42,28 @@ const boardStore = useBoardStore()
     rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
   max-height: 100%;
   position: relative;
-  padding: 20px;
+  padding: var(--padding);
+  display: flex;
+  flex-direction: column;
+  row-gap: 16px;
 }
 .move-list {
   display: flex;
   flex-direction: column;
   row-gap: 8px;
-  max-height: calc(100% - 80px);
   overflow-y: auto;
+  flex-grow: 1;
 }
 .move-list-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 16px;
 }
 
 @media (max-width: 768px) {
   /* Apply styles for smaller screens */
   #side-menu {
-    width: calc(100% - 40px);
+    width: calc(100% - (var(--padding) * 2));
     min-height: 200px;
     flex-grow: 1;
   }

@@ -44,12 +44,9 @@ onMounted(() => {
 
 <style scoped>
 .theme-switcher {
-  position: absolute;
   display: flex;
   flex-direction: column;
-  row-gap: 5px;
-  padding: 10px 0;
-
-  bottom: 0px;
+  row-gap: 8px;
+  max-width: 112px;
 }
 </style>
