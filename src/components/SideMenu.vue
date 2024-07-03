@@ -59,7 +59,7 @@ const boardStore = useBoardStore()
 @media (max-width: 768px) {
   /* Apply styles for smaller screens */
   #side-menu {
-    width: 100%;
+    width: calc(100% - 40px);
     min-height: 200px;
     flex-grow: 1;
   }
