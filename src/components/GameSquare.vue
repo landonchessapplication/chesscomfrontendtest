@@ -62,33 +62,37 @@ const emit = defineEmits<{
 }
 
 .game-square.light-square {
-  background-color: #e6e6e6;
+  background-color: var(--light-square);
 }
 
 .game-square.light-square:hover {
-  background-color: #ccc;
+  background-color: var(--light-square-hover);
 }
 
 .game-square.light-square.highlighted {
-  background-color: blue;
+  background-color: var(--light-square-highlighted);
 }
 
 .game-square.dark-square {
-  background-color: #7373b3;
+  background-color: var(--dark-square);
 }
 
 .game-square.dark-square:hover {
-  background-color: #50507d;
+  background-color: var(--dark-square-hover);
 }
 .game-square.dark-square.highlighted {
-  background-color: purple;
+  background-color: var(--dark-square-highlighted);
 }
 
 .light-square .board-notation {
-  color: #7373b3;
+  color: var(--dark-square);
+}
+
+.light-square.highlighted .board-notation {
+  color: var(--light-square-hover);
 }
 
 .dark-square .board-notation {
-  color: #ccc;
+  color: var(--light-square);
 }
 </style>

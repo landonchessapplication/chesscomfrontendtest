@@ -1,7 +1,16 @@
+:root {
+  --background-color: #7393b3;
+  --light-square: #e6e6e6;
+  --light-square-hover: #ccc;
+  --light-square-highlighted: blue;
+  --dark-square: #7373b3;
+  --dark-square-hover: #50507d;
+  --dark-square-highlighted: purple;
+}
+
 html,
 body {
-  color: black;
-  background-color: #7393b3;
+  background-color: var(--background-color);
   margin: 0;
 }
 

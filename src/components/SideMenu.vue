@@ -10,6 +10,7 @@ const boardStore = useBoardStore()
       <div v-if="boardStore.highlightedSquares.length === 0">
         No squares highlighted. Click on a square to begin tracking moves.
       </div>
+      <div v-else>Highlighted Squares:</div>
       <template
         v-for="(highlightedSquare, index) in boardStore.highlightedSquares"
         :key="highlightedSquare.index"
@@ -26,8 +27,8 @@ const boardStore = useBoardStore()
 .sidemenu {
   width: 300px;
   padding: 20px;
-  color: #ccc;
-  background-color: #7373b3;
+  color: var(--light-square-hover);
+  background-color: var(--dark-square);
   box-shadow:
     rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
     rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
