@@ -20,7 +20,9 @@ export const useBoardStore = defineStore('board', {
       } else {
         this.highlightedSquares.push(square)
       }
-      return
+    },
+    resetHighlights() {
+      this.highlightedSquares = []
     }
   }
 })

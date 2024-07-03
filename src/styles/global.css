@@ -14,14 +14,29 @@ body {
   margin: 0;
 }
 
+button {
+  border-radius: 8px;
+  border: none;
+  padding: 6px;
+  cursor: pointer;
+  background-color: var(--light-square);
+  color: var(--dark-square);
+}
+button:hover {
+  background-color: var(--light-square-hover);
+  color: var(--dark-square-hover);
+}
+
 #app {
   display: flex;
   height: 100vh;
+  overflow: auto;
 }
 
 @media (max-width: 768px) {
   #app {
     flex-direction: column;
     gap: unset;
+    min-height: 400px; /* anything small than this is too squished to use, we will just add scroll */
   }
 }
