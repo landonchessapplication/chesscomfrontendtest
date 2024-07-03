@@ -95,4 +95,10 @@ const emit = defineEmits<{
 .dark-square .board-notation {
   color: var(--light-square);
 }
+
+@media (max-width: 768px) {
+  .board-notation {
+    font-size: 14px;
+  }
+}
 </style>
