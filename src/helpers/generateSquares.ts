@@ -6,7 +6,7 @@ export const generateBoard = () => {
     BOARD_FILES.map((file, fileIndex) => ({
       file,
       rank,
-      index: rankIndex * 8 + fileIndex,
+      index: rankIndex * BOARD_RANKS.length + fileIndex,
       isDarkSquare: isDarkSquare(file, rank),
       highlighted: false
     }))
