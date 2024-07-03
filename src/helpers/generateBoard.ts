@@ -22,8 +22,7 @@ export const generateBoard = () => {
       file,
       rank,
       index: rankIndex * BOARD_RANKS.length + fileIndex,
-      isDarkSquare: isDarkSquare(fileIndex, rankIndex),
-      highlighted: false
+      isDarkSquare: isDarkSquare(fileIndex, rankIndex)
     }))
   )
 }

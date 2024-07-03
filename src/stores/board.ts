@@ -1,30 +1,27 @@
-import { generateBoard } from '@/helpers/generateBoard'
 import type { Square } from '@/types'
 import { defineStore } from 'pinia'
 
 export const useBoardStore = defineStore('board', {
   state: () => ({
-    board: generateBoard() as Square[]
+    highlightedSquares: [] as Square[]
   }),
 
   actions: {
-    updateHighlightedSquareState(changedSquare: Square) {
+    updateHighlightedSquareState(square: Square) {
+      const squareIsHighlighted = this.highlightedSquares.find(
+        (highlightedSquare) => highlightedSquare.index === square.index
+      )
       // If the square has already been highlighted, unhighlight it - else highlight
-      this.board = this.board.map((square) => {
-        if (square.index === changedSquare.index) {
-          return { ...square, highlighted: !square.highlighted }
-        } else return square
-      })
+      if (squareIsHighlighted) {
+        this.highlightedSquares = this.highlightedSquares.filter(
+          (highlightedSquare) => highlightedSquare.index !== square.index
+        )
+      } else {
+        this.highlightedSquares.push(square)
+      }
     },
     resetHighlights() {
-      this.board = this.board.map((square) => {
-        return { ...square, highlighted: false }
-      })
-    }
-  },
-  getters: {
-    highlightedSquares: (state) => {
-      return state.board.filter((square) => square.highlighted)
+      this.highlightedSquares = []
     }
   }
 })

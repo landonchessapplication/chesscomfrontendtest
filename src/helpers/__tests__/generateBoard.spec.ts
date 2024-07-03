@@ -7,11 +7,6 @@ describe('generateBoard', () => {
     const board = generateBoard()
     expect(board).toHaveLength(64)
   })
-
-  it('Returns a board without any highlighted squares', () => {
-    const board = generateBoard()
-    expect(board.every((square) => square.highlighted)).not.toBeTruthy()
-  })
   it('Returns a dark square at A1', () => {
     // arrange
     const file: File[number] = 'a'

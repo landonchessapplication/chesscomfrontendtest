@@ -1,9 +1,17 @@
 <script setup lang="ts">
 import { BOTTOM_RANK, LEFT_FILE } from '@/static'
+import { useBoardStore } from '@/stores/board'
 import type { Square } from '@/types'
-defineProps<{
+import { computed } from 'vue'
+const boardStore = useBoardStore()
+const props = defineProps<{
   square: Square
 }>()
+const isSquareHighlighted = computed(() =>
+  boardStore.highlightedSquares.some(
+    (highlightedSquare) => props.square.index === highlightedSquare.index
+  )
+)
 const emit = defineEmits<{
   (event: 'square-clicked', square: Square): void
 }>()
@@ -16,7 +24,7 @@ const emit = defineEmits<{
     :class="{
       'dark-square': square.isDarkSquare,
       'light-square': !square.isDarkSquare,
-      highlighted: square.highlighted
+      highlighted: isSquareHighlighted
     }"
   >
     <h5 class="board-notation bottom-rank" v-if="square.rank === BOTTOM_RANK">

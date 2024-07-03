@@ -8,5 +8,4 @@ export interface Square {
   rank: Rank[number]
   index: number
   isDarkSquare: boolean
-  highlighted: boolean
 }

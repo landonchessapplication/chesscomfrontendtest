@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { generateBoard } from '@/helpers/generateBoard'
 import { BOARD_FILES, BOARD_RANKS } from '@/static'
 import { useBoardStore } from '@/stores/board'
 import type { Square } from '@/types'
@@ -6,6 +7,9 @@ import { computed, onMounted, onUnmounted, ref } from 'vue'
 import GameSquare from '../components/GameSquare.vue'
 const boardStore = useBoardStore()
 const boardContainerMax = ref('0px')
+const board = computed(() => {
+  return generateBoard()
+})
 const gridColumns = computed(() => {
   return `repeat(${BOARD_FILES.length}, 1fr)`
 })
@@ -18,11 +22,7 @@ function handleSquareClick(square: Square) {
 function getBoardContainerDimensions() {
   const boardContainer = document.getElementById('board-viewport')
   if (boardContainer) {
-    const maxValue = Math.max(
-      boardContainer.getBoundingClientRect().height,
-      boardContainer.getBoundingClientRect().height
-    )
-    boardContainerMax.value = `${maxValue}px`
+    boardContainerMax.value = `${boardContainer.getBoundingClientRect().height}px`
   }
 }
 
@@ -40,7 +40,7 @@ onUnmounted(() => {
 <template>
   <div class="board-container" id="board-viewport">
     <div class="board">
-      <template v-for="square in boardStore.board" :key="square.index">
+      <template v-for="square in board" :key="square.index">
         <GameSquare :square="square" @square-clicked="handleSquareClick" />
       </template>
     </div>
