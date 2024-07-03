@@ -1,13 +1,14 @@
 import { BOARD_FILES, BOARD_RANKS } from '@/static'
 import { isDarkSquare } from './isDarkSquare'
 
-export const generateSquares = () => {
+export const generateBoard = () => {
   return BOARD_RANKS.flatMap((rank, rankIndex) =>
     BOARD_FILES.map((file, fileIndex) => ({
       file,
       rank,
       index: rankIndex * 8 + fileIndex,
-      isDarkSquare: isDarkSquare(file, rank)
+      isDarkSquare: isDarkSquare(file, rank),
+      highlighted: false
     }))
   )
 }

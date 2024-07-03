@@ -1,14 +1,10 @@
 <script setup lang="ts">
-import { generateSquares } from '@/helpers/generateSquares'
 import { BOARD_FILES, BOARD_RANKS } from '@/static'
 import { useBoardStore } from '@/stores/board'
 import type { Square } from '@/types'
 import { computed, onMounted, onUnmounted, ref } from 'vue'
 import GameSquare from '../components/GameSquare.vue'
 const boardStore = useBoardStore()
-const squares = computed(() => {
-  return generateSquares()
-})
 const boardContainerMax = ref('0px')
 const columns = computed(() => {
   return `repeat(${BOARD_FILES.length}, 1fr)`
@@ -37,13 +33,14 @@ onMounted(() => {
 
 onUnmounted(() => {
   window.removeEventListener('resize', getBoardContainerDimensions)
+  window.removeEventListener('load', getBoardContainerDimensions)
 })
 </script>
 
 <template>
   <div class="board-container" id="board-viewport">
     <div class="board">
-      <template v-for="(square, index) in squares" :key="index">
+      <template v-for="(square, index) in boardStore.board" :key="index">
         <GameSquare :square="square" @square-clicked="handleSquareClick" />
       </template>
     </div>
