@@ -40,7 +40,7 @@ onUnmounted(() => {
 <template>
   <div class="board-container" id="board-viewport">
     <div class="board">
-      <template v-for="(square, index) in boardStore.board" :key="index">
+      <template v-for="square in boardStore.board" :key="square.index">
         <GameSquare :square="square" @square-clicked="handleSquareClick" />
       </template>
     </div>

@@ -26,7 +26,7 @@ describe('generateBoard', () => {
     // assert
     expect(result).toBeTruthy()
   })
-  it('Returns a light square for E4', () => {
+  it('Returns a light square at E4', () => {
     // arrange
     const file: File[number] = 'e'
     const rank: Rank[number] = '4'
