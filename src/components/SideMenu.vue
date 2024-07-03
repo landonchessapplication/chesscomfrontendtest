@@ -24,9 +24,8 @@ const boardStore = useBoardStore()
         </div>
       </template>
     </div>
-    <div>
-      <ThemeSwitch />
-    </div>
+
+    <ThemeSwitch />
   </div>
 </template>
 

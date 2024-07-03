@@ -24,6 +24,7 @@ select {
   color: #333;
   padding: 6px;
   cursor: pointer;
+  border-right: 8px solid transparent;
 }
 
 button {
@@ -49,6 +50,6 @@ button:hover {
   #app {
     flex-direction: column;
     gap: unset;
-    min-height: 400px; /* anything smaller than this is too squished to use, we will just add scroll */
+    min-height: 400px; /* anything small than this is too squished to use, we will just add scroll */
   }
 }

@@ -47,6 +47,6 @@ onMounted(() => {
   display: flex;
   flex-direction: column;
   row-gap: 8px;
-  max-width: 112px;
+  width: fit-content;
 }
 </style>
