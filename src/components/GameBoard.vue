@@ -6,10 +6,10 @@ import { computed, onMounted, onUnmounted, ref } from 'vue'
 import GameSquare from '../components/GameSquare.vue'
 const boardStore = useBoardStore()
 const boardContainerMax = ref('0px')
-const columns = computed(() => {
+const gridColumns = computed(() => {
   return `repeat(${BOARD_FILES.length}, 1fr)`
 })
-const rows = computed(() => {
+const gridRows = computed(() => {
   return `repeat(${BOARD_RANKS.length}, 1fr)`
 })
 function handleSquareClick(square: Square) {
@@ -59,8 +59,8 @@ onUnmounted(() => {
   display: grid;
   margin: auto;
   aspect-ratio: 1;
-  grid-template-columns: v-bind(columns);
-  grid-template-rows: v-bind(rows);
+  grid-template-columns: v-bind(gridColumns);
+  grid-template-rows: v-bind(gridRows);
   border-radius: 8px;
   overflow: hidden; /*  overflow allows border radius to show */
   box-shadow:

@@ -1,4 +1,6 @@
-# Live demo
+# Landon Marshall's Chess.com coding challenge submission
+
+## Live Demo
 
 https://landonchessapplication.github.io/chesscomfrontendtest/
 
