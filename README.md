@@ -1,3 +1,9 @@
+# Live demo
+
+https://landonchessapplication.github.io/chesscomfrontendtest/
+
+# Original README
+
 # Chess.com - Front End Programming Challenge
 
 Welcome to the [Chess.com](https://chess.com) front end programming challenge!
