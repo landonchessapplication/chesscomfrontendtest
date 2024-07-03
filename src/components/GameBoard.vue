@@ -33,7 +33,7 @@ function getBoardContainerDimensions() {
 
 onMounted(() => {
   window.addEventListener('resize', getBoardContainerDimensions)
-  window.addEventListener('onload', getBoardContainerDimensions)
+  window.addEventListener('load', getBoardContainerDimensions)
 })
 
 onUnmounted(() => {
