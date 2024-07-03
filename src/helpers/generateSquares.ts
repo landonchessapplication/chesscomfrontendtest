@@ -1,5 +1,5 @@
 import { BOARD_FILES, BOARD_RANKS } from '@/static'
-import { getSquareColor } from './getSquareColor'
+import { isDarkSquare } from './isDarkSquare'
 
 export const generateSquares = () => {
   return BOARD_RANKS.flatMap((rank, rankIndex) =>
@@ -7,7 +7,7 @@ export const generateSquares = () => {
       file,
       rank,
       index: rankIndex * 8 + fileIndex,
-      isDarkSquare: getSquareColor(file, rank)
+      isDarkSquare: isDarkSquare(file, rank)
     }))
   )
 }
