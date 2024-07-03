@@ -9,10 +9,10 @@ export const THEMES = {
     'background-color': '#7393b3',
     'light-square': '#e6e6e6',
     'light-square-hover': '#ccc',
-    'light-square-highlighted': '#6DC37A',
+    'light-square-highlighted': '#8bc1da',
     'dark-square': '#7373b3',
     'dark-square-hover': '#8A8AC2',
-    'dark-square-highlighted': '#19B39B'
+    'dark-square-highlighted': '#2e2aac'
   },
   Checkered: {
     'background-color': '#777',
@@ -31,15 +31,6 @@ export const THEMES = {
     'dark-square': '#6A9B41',
     'dark-square-hover': '#557C34',
     'dark-square-highlighted': '#B6CD3E'
-  },
-  Warm: {
-    'background-color': '#666',
-    'light-square': '#444',
-    'light-square-hover': '#555',
-    'light-square-highlighted': '#888',
-    'dark-square': '#CD7F32	',
-    'dark-square-hover': '#DAA06D',
-    'dark-square-highlighted': '#ffa700'
   }
 }
 
