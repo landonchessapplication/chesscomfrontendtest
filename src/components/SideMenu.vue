@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import ThemeSwitch from '@/components/ThemeSwitch.vue'
 import { useBoardStore } from '@/stores/board'
 
 const boardStore = useBoardStore()
@@ -23,6 +24,8 @@ const boardStore = useBoardStore()
           {{ `${index + 1}: ${highlightedSquare.file}${highlightedSquare.rank}` }}
         </div>
       </template>
+
+      <ThemeSwitch />
     </div>
   </div>
 </template>
@@ -30,14 +33,15 @@ const boardStore = useBoardStore()
 <style scoped>
 #side-menu {
   width: 300px;
-  color: var(--light-square-hover);
-  background-color: var(--dark-square);
+  color: #e3e3e3;
+  background-color: #222;
   box-shadow:
     rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
     rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
     rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
   max-height: 100%;
   overflow: auto;
+  position: relative;
 }
 .move-list {
   display: flex;
@@ -55,7 +59,6 @@ const boardStore = useBoardStore()
   /* Apply styles for smaller screens */
   #side-menu {
     width: 100%;
-    flex-grow: 1;
     min-height: 200px;
   }
 }

@@ -2,10 +2,10 @@
   --background-color: #7393b3;
   --light-square: #e6e6e6;
   --light-square-hover: #ccc;
-  --light-square-highlighted: blue;
+  --light-square-highlighted: #6dc37a;
   --dark-square: #7373b3;
-  --dark-square-hover: #50507d;
-  --dark-square-highlighted: purple;
+  --dark-square-hover: #8a8ac2;
+  --dark-square-highlighted: #19b39b;
 }
 
 html,
