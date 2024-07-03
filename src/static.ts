@@ -31,15 +31,6 @@ export const THEMES = {
     'dark-square': '#6A9B41',
     'dark-square-hover': '#557C34',
     'dark-square-highlighted': '#B6CD3E'
-  },
-  Pastel: {
-    'background-color': '#FEE5D8',
-    'light-square': '#FFD3C8',
-    'light-square-hover': '#FFB8A8',
-    'light-square-highlighted': '#FFEBDF',
-    'dark-square': '#5C2C2F',
-    'dark-square-hover': '#853031',
-    'dark-square-highlighted': '#3F1D20'
   }
 }
 
