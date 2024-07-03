@@ -19,12 +19,12 @@ const emit = defineEmits<{
       highlighted: square.highlighted
     }"
   >
-    <div class="board-notation bottom-rank" v-if="square.rank === BOTTOM_RANK">
+    <h5 class="board-notation bottom-rank" v-if="square.rank === BOTTOM_RANK">
       {{ square.file }}
-    </div>
-    <div class="board-notation left-file" v-if="square.file === LEFT_FILE">
+    </h5>
+    <h5 class="board-notation left-file" v-if="square.file === LEFT_FILE">
       {{ square.rank }}
-    </div>
+    </h5>
   </div>
 </template>
 

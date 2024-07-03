@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2family=Poppins');
+
 :root {
   --background-color: #7393b3;
   --light-square: #e6e6e6;
@@ -12,6 +14,21 @@ html,
 body {
   background-color: var(--background-color);
   margin: 0;
+  font-family: 'Poppins', 'Helvetica Neue', Helvetica, Arial, sans;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
 }
 
 * {
@@ -24,7 +41,6 @@ select {
   color: #333;
   padding: 6px;
   cursor: pointer;
-  border-right: 8px solid transparent;
 }
 
 button {

@@ -1,4 +1,4 @@
-import { generateBoard } from '@/helpers/generateSquares'
+import { generateBoard } from '@/helpers/generateBoard'
 import type { Square } from '@/types'
 import { defineStore } from 'pinia'
 

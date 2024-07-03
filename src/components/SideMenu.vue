@@ -7,23 +7,23 @@ const boardStore = useBoardStore()
 
 <template>
   <div id="side-menu">
-    <div v-if="boardStore.highlightedSquares.length === 0">
+    <h4 v-if="boardStore.highlightedSquares.length === 0">
       No squares selected. Click on a square to begin tracking moves.
-    </div>
+    </h4>
     <div v-else class="move-list-header">
-      <div>Selected Squares</div>
+      <h2>Selected Squares</h2>
       <button @click="boardStore.resetHighlights()">Reset</button>
     </div>
-    <div class="move-list">
-      <template
+    <ul class="move-list">
+      <li
         v-for="(highlightedSquare, index) in boardStore.highlightedSquares"
         :key="highlightedSquare.index"
       >
-        <div>
+        <h5>
           {{ `${index + 1}. ${highlightedSquare.file}${highlightedSquare.rank}` }}
-        </div>
-      </template>
-    </div>
+        </h5>
+      </li>
+    </ul>
 
     <ThemeSwitch />
   </div>
@@ -52,6 +52,7 @@ const boardStore = useBoardStore()
   row-gap: 8px;
   overflow-y: auto;
   flex-grow: 1;
+  margin: 16px 0 0 16px;
 }
 .move-list-header {
   display: flex;

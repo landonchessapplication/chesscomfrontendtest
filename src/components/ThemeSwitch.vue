@@ -28,7 +28,7 @@ onMounted(() => {
 </script>
 <template>
   <div class="theme-switcher">
-    <div>Themes</div>
+    <h2>Themes</h2>
     <select v-model="selectedTheme" @change="setTheme($event)">
       <option
         @click="setTheme('index')"
